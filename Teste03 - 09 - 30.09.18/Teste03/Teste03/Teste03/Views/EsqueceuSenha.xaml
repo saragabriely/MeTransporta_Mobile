@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teste03.Views.EsqueceuSenha">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Default}" >
+
+        <Grid RowSpacing="-1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="85.4" />
+                <!-- 0 -->
+                <ColumnDefinition  Width="85.4" />
+                <!-- 1 -->
+                <ColumnDefinition  Width="85.4" />
+                <!-- 2 -->
+                <ColumnDefinition  Width="85.4" />
+                <!-- 3 -->
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <!-- 0 -->
+                <RowDefinition Height="469.5" />
+                <!-- 1 -->
+                <RowDefinition Height="50" />
+                <!-- 2 -->
+            </Grid.RowDefinitions>
+
+            <Label  Text="MeTransporta"     
+                    TextColor="{StaticResource LightBlue}"  BackgroundColor="{StaticResource Blue}"
+                    HorizontalOptions="FillAndExpand"       VerticalOptions="Center" 
+                    VerticalTextAlignment="Center"          HorizontalTextAlignment="Center"
+                    FontSize="22"   HeightRequest="50"
+                    Grid.Row="0"    Grid.Column="0" Grid.ColumnSpan="4"
+                />
+
+            <StackLayout Grid.Row="1"    Grid.Column="0" Grid.ColumnSpan="4" Padding="20" Spacing="18" >
+
+                <Label  Text="RECUPERAÇÃO DE SENHA"  FontSize="16" FontAttributes="Bold" TextColor="{StaticResource Blue}" 
+                        HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  HeightRequest="60"  />
+
+                <Label x:Name="lblRecuperacaoSenha" Text="Digite o e-mail cadastrado" FontSize="15" 
+                           HorizontalOptions="CenterAndExpand" />
+
+                <Entry x:Name="etEmail" Placeholder="exemplo@metransporta.com" FontSize="15" WidthRequest="290" 
+                       HorizontalTextAlignment="Center" HorizontalOptions="Center"  />
+
+                <Button x:Name="btnRecuperarSenha" Text="Verificar"
+                        BackgroundColor="{StaticResource PinkBtn}" TextColor="{StaticResource White}"
+                        HorizontalOptions="CenterAndExpand" WidthRequest="290" Clicked="BtnRecuperarSenha_Clicked" />
+
+                <Label x:Name="lblResultadoOk" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource GreenBtn}" 
+                       IsVisible="False" 
+                       HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  />
+
+                <Label x:Name="lblResultadoNotOk" FontSize="15" FontAttributes="Bold" TextColor="{StaticResource RedAlert}" 
+                       IsVisible="False" 
+                       HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand"  />
+
+            </StackLayout>
+
+
+            <!-- HOME -->
+            <StackLayout Grid.Row="2"  Grid.Column="0" Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnHome_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="home.png"   VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"  />
+
+                <Label Text="Página Inicial"  FontSize="10" VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <!-- CONHEÇA O APLICATIVO -->
+            <StackLayout Grid.Row="2"  Grid.Column="1" Spacing="-3"  >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnConhecerApp_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="car.png"     VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Conheça o Aplicativo" FontSize="10" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center"  />
+
+            </StackLayout>
+
+            <!-- CADASTRE-SE -->
+            <StackLayout Grid.Row="2"  Grid.Column="2"  Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnCadastreSe_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="add.png"    VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Cadastre-se" FontSize="10"  VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center"  />
+
+            </StackLayout>
+
+            <!-- LOGIN -->
+            <StackLayout Grid.Row="2"  Grid.Column="3"  Spacing="-3">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnLogin_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="pessoa2.png" VerticalOptions="CenterAndExpand"   HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"   />
+
+                <Label Text="Login"   FontSize="10"  FontAttributes="Bold"    TextColor="{StaticResource Blue}" 
+                       VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"  />
+
+            </StackLayout>
+
+        </Grid>
+
+    </AbsoluteLayout>
+
+</ContentPage>

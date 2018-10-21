@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teste03.Views.ClientePF_Cadastro">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Default}" >
+
+        <Grid RowSpacing="-1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="85.4" />
+                <ColumnDefinition  Width="85.4" />
+                <ColumnDefinition  Width="85.4" />
+                <ColumnDefinition  Width="85.4" />
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <RowDefinition Height="469.5" />
+                <RowDefinition Height="50" />
+
+            </Grid.RowDefinitions>
+
+            <!-- ME TRANSPORTA -->
+            <Label  Text="MeTransporta"     
+                                TextColor="{StaticResource LightBlue}"  BackgroundColor="{StaticResource Blue}"
+                                HorizontalOptions="FillAndExpand"       VerticalOptions="Center" 
+                                VerticalTextAlignment="Center"          HorizontalTextAlignment="Center"
+                                FontSize="22"   HeightRequest="50"
+                                Grid.Row="0"    Grid.Column="0" Grid.ColumnSpan="4"
+                            />
+
+            <StackLayout Grid.Row="1"    Grid.Column="0" Grid.ColumnSpan="4" Margin="13">
+
+                <Label  Text="CADASTRE-SE"  FontSize="16"   FontAttributes="Bold"  TextColor="{StaticResource Blue}" 
+                        HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  HeightRequest="60"  />
+
+                <!-- Cliente -->
+                <Label Text="Perfil Cliente" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+
+                <StackLayout VerticalOptions="StartAndExpand" Margin="3" >
+
+                    <!-- Botões -->
+                    <StackLayout Orientation="Horizontal" Spacing="-3">
+
+                        <!-- Dados Pessoais // Clicked="BtnDadosPessoais_Clicked" -->
+                        <Button  x:Name="btnDadosPessoais" Text="Dados Pessoais" WidthRequest="80" FontSize="10" IsEnabled="True"
+                                 TextColor="{StaticResource Blue}" FontAttributes="Bold" />
+
+                        <!-- Endereço  // Clicked="BtnEndereco_Clicked" -->
+                        <Button x:Name="btnEndereco" Text="Endereço" WidthRequest="85" FontSize="10" IsEnabled="False"
+                                TextColor="{StaticResource Blue}" FontAttributes="Bold" />
+
+                        <!-- Dados Bancários // Clicked="BtnDadosBancarios_Clicked" -->
+                        <Button x:Name="btnDadosBancarios" Text="Dados Bancários" WidthRequest="90" FontSize="10"
+                                IsEnabled="False" TextColor="{StaticResource Blue}" FontAttributes="Bold" />
+
+                        <!-- Email e Senha // Clicked="BtnEmailSenha_Clicked" -->
+                        <Button  x:Name="btnEmailSenha"  Text="E-mail e Senha" WidthRequest="80" FontSize="10" IsEnabled="False"
+                                 TextColor="{StaticResource Blue}" FontAttributes="Bold" />
+
+                    </StackLayout>
+
+                    <Grid x:Name="Gri02" ColumnSpacing="-1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="54" />
+                            <!-- 0 -->
+                            <ColumnDefinition  Width="52" />
+                            <!-- 1 -->
+                            <ColumnDefinition  Width="48" />
+                            <!-- 2 -->
+                            <ColumnDefinition  Width="48" />
+                            <!-- 3 -->
+                            <ColumnDefinition  Width="50" />
+                            <!-- 4 -->
+                            <ColumnDefinition  Width="50" />
+                            <!-- 5 -->
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions  >
+                            <RowDefinition Height="40" />
+                            <!-- 0 -->
+                            <RowDefinition Height="35" />
+                            <!-- 1 -->
+                            <RowDefinition Height="35" />
+                            <!-- 2 -->
+                            <RowDefinition Height="35" />
+                            <!-- 3 -->
+                            <RowDefinition Height="35" />
+                            <!-- 4 -->
+                            <RowDefinition Height="35" />
+                            <!-- 5 -->
+                            <RowDefinition Height="35" />
+                            <!-- 6 -->
+                            <RowDefinition Height="44" />
+                            <!-- 7 -->
+                        </Grid.RowDefinitions>
+
+                        <!-- *DADOS PESSOAIS* -->
+
+                        <!-- Nome -->
+                        <Label Text="Nome" x:Name="lblClienteNome" FontSize="14" FontAttributes="Bold"  IsVisible="True"
+                                   Grid.Column="0" Grid.Row="0"   VerticalOptions="CenterAndExpand" />
+
+                        <Entry x:Name="etClienteNome" Placeholder="Digite o seu nome" FontSize="14"     IsVisible="True"
+                                   Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="6" VerticalOptions="EndAndExpand"
+                                    />
+
+                        <!-- RG -->
+                        <Label  x:Name="lblClienteRg" Text="RG" FontSize="14"  FontAttributes="Bold"    IsVisible="True"
+                                    Grid.Column="0" Grid.Row="1"   />
+
+                        <Entry  x:Name="etClienteRg" Placeholder="00.000.000-0" FontSize="14"  IsVisible="True" 
+                                    Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="2" HorizontalTextAlignment="Center"
+                                    VerticalOptions="EndAndExpand" WidthRequest="120" Keyboard="Numeric" 
+                                      />
+
+                        <!-- CPF -->
+                        <Label  x:Name="lblClienteCpf" Text="CPF" FontSize="14" FontAttributes="Bold"     IsVisible="True"
+                                    Grid.Column="3" Grid.Row="1" HorizontalOptions="Center"  />
+
+                        <Entry  x:Name="etClienteCpf" Placeholder="000.000.000-00" FontSize="14" WidthRequest="120" 
+                                    IsVisible="True"
+                                    Grid.Column="4 " Grid.Row="1"  Grid.ColumnSpan="3"  HorizontalTextAlignment="Center"
+                                    VerticalOptions="EndAndExpand"  Keyboard="Numeric" />
+
+                        <!-- Sexo -->
+
+                        <Label  x:Name="lblClienteSexo" Text="Sexo" FontSize="14" FontAttributes="Bold" IsVisible="True"
+                                    Grid.Column="0" Grid.Row="2" />
+
+
+                        <Picker x:Name="etClienteSexo" Title="Sexo" Grid.Column="1" Grid.Row="2"  >
+                            <Picker.Items>
+                                <x:String>F</x:String>
+                                <x:String>M</x:String>
+                            </Picker.Items>
+                            <Picker.SelectedIndex>0</Picker.SelectedIndex>
+                        </Picker>
+
+                        <!--
+                        <Entry  x:Name="etClienteSexo" Placeholder="Sexo" FontSize="14"    IsVisible="True"
+                                    Grid.Column="1" Grid.Row="2"   HorizontalTextAlignment="Center"
+                                    VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand"  /> -->
+
+                        <!-- Data de Nascimento -->
+                        <Label  x:Name="lblClienteDataNascto" Text="Nascimento" FontSize="14"  FontAttributes="Bold" 
+                                    IsVisible="True" HorizontalOptions="Center"
+                                    Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" />
+
+                        <Entry  x:Name="etClienteDataNascto" Placeholder="00/00/0000" FontSize="14" IsVisible="True"
+                                    Grid.Column="4" Grid.Row="2"  Grid.ColumnSpan="3"  
+                                    HorizontalTextAlignment="Center"  Keyboard="Numeric"
+                                    VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"  WidthRequest="120" />
+
+                        <!-- Celular 01 -->
+                        <Label  x:Name="lblClienteCelular"  Text="Celular" FontSize="14" FontAttributes="Bold" IsVisible="True"
+                                    Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"  />
+
+                        <Entry  x:Name="etClienteCelular" Placeholder="(00)00000-0000" FontSize="14"    IsVisible="True"
+                                    Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3"  HorizontalTextAlignment="Center"
+                                    VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" WidthRequest="120" 
+                                    Keyboard="Telephone" />
+
+                        <!-- Celular 02 -->
+                        <Label  x:Name="lblClienteCelular02" Text="Celular 2" FontSize="13" FontAttributes="Bold" 
+                                    IsVisible="True"
+                                    Grid.Column="0" Grid.Row="4"  />
+
+                        <Entry  x:Name="etClienteCelular02" Placeholder="(00)00000-0000" FontSize="14"   IsVisible="True"
+                                    Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3"  HorizontalTextAlignment="Center"
+                                    VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" WidthRequest="120" 
+                                    Keyboard="Telephone" />
+
+                        <!-- *ENDEREÇO* -->
+
+                        <!-- Endereco -->
+                        <Label   x:Name="lblClienteEndereco" Text="Endereço Residencial" FontSize="14" FontAttributes="Bold" 
+                                     IsVisible="False"
+                                     Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="6"  VerticalOptions="EndAndExpand" />
+
+                            <Entry  x:Name="etClienteEndereco"  Placeholder="Digite o seu endereço" FontSize="14" IsVisible="False" 
+                                    Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" VerticalOptions="StartAndExpand"  />
+
+                            <!-- Número -->
+                            <Label  x:Name="lblClienteNumero" Text="Número"  FontSize="14" FontAttributes="Bold"  IsVisible="False"
+                                    Grid.Column="0" Grid.Row="2"   VerticalOptions="CenterAndExpand"  />
+
+                            <Entry  x:Name="etClienteNumero"  Placeholder="Nº"  FontSize="14" WidthRequest="60" IsVisible="False" 
+                                    Grid.Column="1" Grid.Row="2"  VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center"
+                                    Keyboard="Numeric"
+                                />
+
+                            <!-- Complemento -->
+                            <Label  x:Name="lblClienteCompl" Text="Compl." FontSize="14" FontAttributes="Bold"  
+                                    IsVisible="False" Grid.Column="2" Grid.Row="2"  
+                                    VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+
+                            <Entry  x:Name="etClienteCompl" Placeholder="Digite o compl." FontSize="14" IsVisible="False" 
+                                    Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="3" VerticalOptions="EndAndExpand"/>
+
+                            <!-- Bairro -->
+                            <Label  x:Name="lblClienteBairro" Text="Bairro" FontSize="14" FontAttributes="Bold"  
+                                    IsVisible="False" Grid.Column="0" Grid.Row="3"  
+                                    VerticalOptions="CenterAndExpand" />
+
+                            <Entry  x:Name="etClienteBairro" Placeholder="Digite o Bairro" FontSize="14" IsVisible="False" 
+                                    Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" VerticalOptions="EndAndExpand"/>
+
+                            <!-- Cidade -->
+                            <Label x:Name="lblClienteCidade" Text="Cidade" FontSize="14" FontAttributes="Bold"  
+                                   IsVisible="False" Grid.Column="0" Grid.Row="4"   VerticalOptions="CenterAndExpand" />
+
+                            <Entry x:Name="etClienteCidade" Placeholder="Digite a Cidade" FontSize="14" IsVisible="False" 
+                                   Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5"  VerticalOptions="CenterAndExpand"/>
+
+                            <!-- CEP -->
+                            <Label x:Name="lblClienteCep" Text="CEP" FontSize="14" FontAttributes="Bold"  IsVisible="False"
+                                   Grid.Column="0" Grid.Row="5" VerticalOptions="CenterAndExpand" />
+
+                            <Entry x:Name="etClienteCep" Placeholder="00000-000"  FontSize="14" IsVisible="False" 
+                                   Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"  VerticalOptions="CenterAndExpand"
+                                   HorizontalTextAlignment="Center" Keyboard="Numeric" />
+
+                            <!-- UF -->
+                            <Label x:Name="lblClienteUf" Text="UF" FontSize="14" FontAttributes="Bold"  IsVisible="False"
+                                   Grid.Column="3" Grid.Row="5" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  />
+
+
+                            <Entry  x:Name="etClienteUf"  Placeholder="UF"  FontSize="14" IsVisible="False" 
+                                    Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2"  VerticalOptions="CenterAndExpand"  
+                                    HorizontalTextAlignment="Center"
+                                    />
+
+                        <!--
+                        <Picker x:Name="etClienteUf" Title="UF" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" IsVisible="False"  >
+                            <Picker.Items>
+                                <x:String>AC</x:String>
+                                <x:String>AL</x:String>
+                                <x:String>AM</x:String>
+                                <x:String>AP</x:String>
+                                <x:String>BA</x:String>
+                                <x:String>CE</x:String>
+                                <x:String>DF</x:String>
+                                <x:String>ES</x:String>
+                                <x:String>GO</x:String>
+                                <x:String>MA</x:String>
+                                <x:String>MG</x:String>
+                                <x:String>MS</x:String>
+                                <x:String>MT</x:String>
+                                <x:String>PA</x:String>
+                                <x:String>PB</x:String>
+                                <x:String>PE</x:String>
+                                <x:String>PI</x:String>
+                                <x:String>PR</x:String>
+                                <x:String>RJ</x:String>
+                                <x:String>RN</x:String>
+                                <x:String>RO</x:String>
+                                <x:String>RR</x:String>
+                                <x:String>RS</x:String>
+                                <x:String>SC</x:String>
+                                <x:String>SE</x:String>
+                                <x:String>SP</x:String>
+                                <x:String>TO</x:String>
+                            </Picker.Items>
+                        </Picker>   -->
+
+                        <!-- *DADOS BANCÁRIOS* -->
+
+                        <!-- * Dados Bancários * 
+                        <Label x:Name="lblDadosBancarios" Text="Dados Bancários" FontSize="14" FontAttributes="Bold" IsVisible="False" 
+                               Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="6" 
+                               HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+                               TextColor="{StaticResource Blue}"/> -->
+
+                        <!-- Número do Cartão -->
+                        <Label x:Name="lblClienteNumeroCartao" Text="Número do Cartão" FontSize="14" FontAttributes="Bold" 
+                               IsVisible="False" 
+                               Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"  VerticalOptions="CenterAndExpand"  />
+
+                        <Entry  x:Name="etClienteNumeroCartao" Placeholder="0000 0000 0000 0000" FontSize="14" IsVisible="False"
+                                Grid.Column="3" Grid.Row="0" Grid.ColumnSpan="3" 
+                                HorizontalTextAlignment="Center" Keyboard="Numeric"  />
+
+                        <!-- Validade Cartão -->
+                        <Label x:Name="lblClienteValidadeCartao" Text="Validade" FontSize="14" FontAttributes="Bold"  IsVisible="False" 
+                               Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  VerticalOptions="CenterAndExpand" />
+
+                        <Entry x:Name="etClienteValidadeCartao" Placeholder="00/0000"  FontSize="14" IsVisible="False"
+                               Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"  Keyboard="Numeric" />
+
+                        <!-- Código de Segurança -->
+                        <Label x:Name="lblClienteCodSeguranca" Text="Cod. de Seg." FontSize="14" FontAttributes="Bold" IsVisible="False" 
+                               Grid.Column="4" Grid.Row="1"  Grid.ColumnSpan="2"  HorizontalOptions="Center"  />
+
+                        <Entry x:Name="etClienteCodSeguranca"  Placeholder="000"  FontSize="14" IsVisible="False"
+                               Grid.Column="6" Grid.Row="1" 
+                               HorizontalOptions="StartAndExpand" Keyboard="Numeric" />
+
+                        <!-- Nome impresso no cartão -->
+                        <Label x:Name="lblClienteNomeImpresso" Text="Nome impresso no cartão" FontSize="14" FontAttributes="Bold"  
+                               IsVisible="False" 
+                               Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="4"  VerticalOptions="CenterAndExpand" />
+
+                        <Entry x:Name="etClienteNomeImpresso" Placeholder="Digite o nome"  FontSize="14" IsVisible="False"
+                               Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="6"   />
+
+                        <!-- Bandeira -->
+                        <Label x:Name="lblClienteBandeira" Text="Bandeira" FontSize="14" FontAttributes="Bold" IsVisible="False" 
+                               Grid.Column="0" Grid.Row="4"  Grid.ColumnSpan="2"
+                               VerticalOptions="CenterAndExpand"  />
+
+                        <Entry x:Name="etClienteBandeira"  Placeholder="Digite a bandeira" FontSize="14"  IsVisible="False"
+                               Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="5" HorizontalOptions="StartAndExpand"  
+                               />
+
+                        <!--    
+                        <Picker x:Name="etClienteTipoConta" Title="Tipo de Conta" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="4"
+                                 IsVisible="False"  >
+                            <Picker.Items>
+                                <x:String>Conta Corrente</x:String>
+                                <x:String>Conta Poupança</x:String>
+                            </Picker.Items>
+                        </Picker> -->
+
+                        <!-- * EMAIL E SENHA * -->
+
+                        <!-- Email -->
+                        <Label x:Name="lblClienteEmail" Text="E-mail"  FontSize="14" FontAttributes="Bold" IsVisible="False" 
+                               Grid.Column="0" Grid.Row="0" VerticalOptions="CenterAndExpand"  />
+
+                        <Entry x:Name="etClienteEmail" Placeholder="exemplo@metransporta.com"  FontSize="14" IsVisible="False" 
+                               Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="5" 
+                               HorizontalOptions="StartAndExpand" WidthRequest="300"  Keyboard="Email" />
+
+                        <!-- Confirmar email -->
+                        <Label x:Name="lblClienteConfEmail" Text="Confirmação de e-mail" FontSize="14" FontAttributes="Bold" 
+                               IsVisible="False" 
+                               Grid.Column="0" Grid.Row="1" Grid.RowSpan="2"  Grid.ColumnSpan="2" 
+                               VerticalOptions="CenterAndExpand"  />
+
+                        <Entry x:Name="etClienteConfEmail" Placeholder="exemplo@metransporta.com"  FontSize="14" IsVisible="False" 
+                               Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5" 
+                               HorizontalOptions="StartAndExpand" WidthRequest="300" Keyboard="Email"  />
+
+                        <!-- Senha -->
+                        <Label x:Name="lblClienteSenha" Text="Senha"  FontSize="14" FontAttributes="Bold" IsVisible="False" 
+                               Grid.Column="0" Grid.Row="3" VerticalOptions="CenterAndExpand"  />
+
+                        <Entry x:Name="etClienteSenha" Placeholder="Digite a senha"  FontSize="14" IsVisible="False" 
+                               Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5"  IsPassword="True" 
+                               HorizontalOptions="StartAndExpand" WidthRequest="300" />
+
+                        <!-- Confirmar de senha -->
+                        <Label x:Name="lblClienteConfSenha" Text="Confirmação de senha" FontSize="14" FontAttributes="Bold" 
+                               IsVisible="False" 
+                               Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" VerticalOptions="EndAndExpand"  />
+
+                        <Entry x:Name="etClienteConfSenha" Placeholder="Digite a senha novamente"  FontSize="14" IsVisible="False" 
+                               Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5"  IsPassword="True" 
+                               HorizontalOptions="StartAndExpand" WidthRequest="300" />
+
+                        <!-- LABEL ALERTA -->
+                        <Label  x:Name="lblAlerta" FontSize="14" FontAttributes="Bold" 
+                            TextColor="{StaticResource RedAlert}" 
+                            Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="7"
+                            HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"  />
+
+                        <!-- LABEL CADASTRO FINALIZADO -->
+                        <Label  x:Name="lblFinalizado" FontSize="15" FontAttributes="Bold" 
+                            TextColor="{StaticResource GreenBtn}" 
+                            Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Grid.RowSpan="6"
+                            HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"  />
+
+
+                        <Button  x:Name="btnAvancar" Text="Avançar" Clicked="BtnAvancar_Clicked"  
+                             BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"
+                             Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="7"
+                             IsVisible="True" VerticalOptions="StartAndExpand" />
+
+                        <Button  x:Name="btnVoltar" Text="Voltar" Clicked="BtnVoltar_Clicked"  
+                             BackgroundColor="{StaticResource Silver}" TextColor="{StaticResource White}"
+                             Grid.Column="0" Grid.Row="7"  Grid.ColumnSpan="3"
+                             IsVisible="False" VerticalOptions="StartAndExpand"  />
+
+                        <Button  x:Name="btnAvancar2" Text="Avançar" Clicked="BtnAvancar_Clicked"  
+                             BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"
+                             Grid.Column="3" Grid.Row="7"  Grid.ColumnSpan="4"
+                             IsVisible="False" VerticalOptions="StartAndExpand" />
+
+                        <Button  x:Name="btnFinalizar" Text="Finalizar" Clicked="BtnFinalizar_Clicked"  
+                             BackgroundColor="{StaticResource GreenBtn}" TextColor="{StaticResource White}"
+                             Grid.Column="3" Grid.Row="7"  Grid.ColumnSpan="4"
+                             IsVisible="False" VerticalOptions="StartAndExpand"  />
+
+
+                    </Grid>
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <!-- HOME -->
+            <StackLayout Grid.Row="2"  Grid.Column="0" Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnHome_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="home.png"   VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"  />
+
+                <Label Text="Página Inicial"  FontSize="10" VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <!-- CONHEÇA O APLICATIVO-->
+            <StackLayout Grid.Row="2"  Grid.Column="1" Spacing="-3"  >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnConhecerApp_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="car.png"     VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Conheça o Aplicativo" FontSize="10" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center"  />
+
+            </StackLayout>
+
+            <!-- CADASTRE-SE -->
+            <StackLayout Grid.Row="2"  Grid.Column="2"  Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnCadastreSe_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="add2.png"    VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Cadastre-se" FontSize="10"  FontAttributes="Bold"          TextColor="{StaticResource Blue}"  
+                                    VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center"     />
+
+            </StackLayout>
+
+            <!-- LOGIN -->
+            <StackLayout Grid.Row="2"  Grid.Column="3"  Spacing="-3">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnLogin_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="pessoa.png" VerticalOptions="CenterAndExpand"   HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="26"  WidthRequest="26"   />
+
+                <Label Text="Login" FontSize="10"  VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"  />
+
+            </StackLayout>
+            
+        </Grid>
+    </AbsoluteLayout>
+
+
+</ContentPage>

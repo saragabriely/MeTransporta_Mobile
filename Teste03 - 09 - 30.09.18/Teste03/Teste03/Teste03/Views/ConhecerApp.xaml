@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teste03.Views.ConhecerApp"
+             xmlns:views="clr-namespace:Teste03.Views"
+             x:Name="cpConhecerApp">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Default}" >
+
+        <Grid RowSpacing="-1">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="85.4" /> <!-- 0 -->
+                <ColumnDefinition  Width="85.4" /> <!-- 1 -->
+                <ColumnDefinition  Width="85.4" /> <!-- 2 -->
+                <ColumnDefinition  Width="85.4" /> <!-- 3 -->
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions >
+                <RowDefinition /> <!-- 0 -->
+                <RowDefinition Height="469.5" /> <!-- 1 -->
+                <RowDefinition Height="50" /> <!-- 2 -->
+            </Grid.RowDefinitions>
+            
+            <!-- Me Transporta -->
+            <Label  Text="MeTransporta"     
+                    TextColor="{StaticResource LightBlue}"      BackgroundColor="{StaticResource Blue}"
+                    HorizontalOptions="FillAndExpand"   VerticalOptions="Center" 
+                    VerticalTextAlignment="Center"      HorizontalTextAlignment="Center"
+                    FontSize="22"
+                    HeightRequest="50"
+                    Grid.Row="0"    Grid.Column="0" Grid.ColumnSpan="4"
+                />
+
+            <StackLayout Grid.Row="1"    Grid.Column="0" Grid.ColumnSpan="4" >
+
+                <Label  Text="CONHEÇA O APLICATIVO"     FontSize="16"   FontAttributes="Bold"  TextColor="{StaticResource Blue}"
+                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  HeightRequest="60"   />
+                
+                <ScrollView Margin="20">
+
+                    <Label Text="Teste .."   />
+
+                </ScrollView>
+
+            </StackLayout>
+
+            <!--
+            <StackLayout Grid.Row="2"  Grid.Column="0">
+
+                <Image Source="logo.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+
+                <Label  Text="Home"  FontSize="9"
+                        VerticalOptions="End"
+                        HorizontalOptions="CenterAndExpand"
+                    />
+
+            </StackLayout> -->
+
+            <!--             
+            <StackLayout Orientation="Horizontal" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="4" Spacing="-3">
+
+                <Image Source="home1.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+
+                <Image Source="conhecer.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+
+                <Image Source="add1.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+
+                <Image Source="pessoa1.png"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       />
+
+            </StackLayout>
+            -->
+
+            <!-- HOME -->
+            <StackLayout Grid.Row="2"  Grid.Column="0" Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnHome_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+                
+                <Image Source="home.png"   VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"  />
+
+                <Label Text="Página Inicial" FontSize="10" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <!-- CONHEÇA O APLICATIVO -->
+            <StackLayout Grid.Row="2"  Grid.Column="1" Spacing="-3"  >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnConhecerApp_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="car2.png"
+                       VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"                    WidthRequest="26"   />
+
+                <Label Text="Conheça o Aplicativo"    FontSize="10"     FontAttributes="Bold" TextColor="{StaticResource Blue}" 
+                       VerticalOptions="EndAndExpand" HorizontalTextAlignment="Center"     />
+
+            </StackLayout>
+
+            <!-- CADASTRE-SE -->
+            <StackLayout Grid.Row="2"  Grid.Column="2"  Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnCadastreSe_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="add.png"    VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"   />
+
+                <Label Text="Cadastre-se" FontSize="10" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"  />
+                
+            </StackLayout>
+
+            <!-- LOGIN -->
+            <StackLayout Grid.Row="2"  Grid.Column="3"  Spacing="-3">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnLogin_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="pessoa.png"  VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Login" FontSize="10" VerticalOptions="StartAndExpand"   HorizontalTextAlignment="Center"  />
+                
+            </StackLayout>
+
+            <!--
+            <Button Text="Home"   FontSize="9"
+                    BackgroundColor="{StaticResource Default}"
+                    Grid.Row="2"  Grid.Column="0"
+                    Clicked="BtnHome_Clicked"
+                    Image="xamarin_logo.png"
+                /> 
+
+            <Button Text="Conheça o Aplicativo"  FontSize="9"
+                    Grid.Row="2"  Grid.Column="1"
+                    Clicked="BtnConhecerApp_Clicked"
+                />
+
+            <Button Text="Cadastre-se"
+                    FontSize="9"
+                    Grid.Row="2"  Grid.Column="2"
+                />
+
+            <Button Text="Login"
+                    FontSize="9"
+                    Grid.Row="2"  Grid.Column="3"
+                />
+            -->
+
+        </Grid>
+        
+    </AbsoluteLayout>
+    
+</ContentPage>

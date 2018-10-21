@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teste03.Views.LgPesquisar">
+
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Default}" >
+
+        <Grid RowSpacing="-1" ColumnSpacing="0" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="72" />
+                <ColumnDefinition  Width="72" />
+                <ColumnDefinition  Width="72" />
+                <ColumnDefinition  Width="72" />
+                <ColumnDefinition  Width="72" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions >
+                <RowDefinition />
+                <RowDefinition Height="476" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Label  Text="MeTransporta"     
+                    TextColor="{StaticResource LightBlue}"      BackgroundColor="{StaticResource Blue}"
+                    HorizontalOptions="FillAndExpand"   VerticalOptions="Center" 
+                    VerticalTextAlignment="Center"      HorizontalTextAlignment="Center"
+                    FontSize="22"
+                    HeightRequest="50"
+                    Grid.Row="0"    Grid.Column="0" Grid.ColumnSpan="5"
+                />
+
+            <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Margin="20" Spacing="20"  HorizontalOptions="Center" >
+
+                <StackLayout Orientation="Horizontal" HeightRequest="40" >
+
+                    <Button x:Name="btnCliente" Text="Cliente" Clicked="BtnCliente_Clicked" HorizontalOptions="Start"  />
+
+                    <Label  Text="PESQUISAR"  FontSize="16"   FontAttributes="Bold"  TextColor="{StaticResource Blue}" 
+                        HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  HeightRequest="60"  />
+
+                    <Button x:Name="btnMotorista" Text="Motorista" Clicked="BtnMotorista_Clicked" HorizontalOptions="End" />
+
+                </StackLayout>
+
+                <!-- Cliente -->
+                <StackLayout x:Name="slCliente" IsVisible="False" >
+
+                    <Label Text="Perfil Cliente" FontSize="14" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" />
+
+                    <!-- Btn - Meu Cadastro -->
+                    <Button x:Name="btnClienteMotorista" Text="Cliente" Clicked="BtnPesquisarMotorista_Clicked" 
+                            BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"  />
+
+                    <!-- Btn - Dados Bancários -->
+                    <Button x:Name="btnClienteOrcamento" Text="Orçamentos" Clicked="BtnCPesquisarOrcamento_Clicked" 
+                            BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"  />
+
+                    <!-- Meus Veículos -->
+                    <Button x:Name="btnClienteColeta" Text="Coletas" Clicked="BtnCPesquisarColetas_Clicked" 
+                            BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"  />
+
+                </StackLayout>
+
+                <!-- Motorista -->
+                <StackLayout x:Name="slMotorista" IsVisible="False" >
+
+                    <Label Text="Perfil Motorista" FontSize="14" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" />
+
+                    <!-- Btn - Meu Cadastro -->
+                    <Button x:Name="btnMotoristaCliente" Text="Cliente" Clicked="BtnPesquisarCliente_Clicked" 
+                            BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"  />
+
+                    <!-- Btn - Dados Bancários -->
+                    <Button x:Name="btnMotoristaOrcamento" Text="Orçamentos" Clicked="BtnMPesquisarOrcamento_Clicked" 
+                            BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"  />
+
+                    <!-- Meus Veículos -->
+                    <Button x:Name="btnMotoristaColeta" Text="Coletas" Clicked="BtnMPesquisarColetas_Clicked" 
+                            BackgroundColor="{StaticResource BlueBtn}" TextColor="{StaticResource White}"  />
+
+                </StackLayout>
+
+            </StackLayout>
+
+            <!-- HOME -->
+            <StackLayout Grid.Row="2"  Grid.Column="0" Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnHome_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="home.png"    VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"   WidthRequest="26"  />
+
+                <Label Text="Página Inicial" FontSize="10"  VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"  />
+
+            </StackLayout>
+
+            <!-- COLETAS -->
+            <StackLayout Grid.Row="2"  Grid.Column="1" Spacing="-3"  >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnColetas_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="car.png"     VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Coletas" FontSize="10" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <!-- PESQUISAR -->
+            <StackLayout Grid.Row="2"  Grid.Column="2" Spacing="-3"  >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnPesquisar_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="pesquisarB.png"     VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"   WidthRequest="26"   />
+
+                <Label Text="Pesquisar" FontSize="10" FontAttributes="Bold"      TextColor="{StaticResource Blue}"  
+                       VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <!-- ORÇAMENTOS -->
+            <StackLayout Grid.Row="2"  Grid.Column="3"  Spacing="-3" >
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnOrcamentos_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="orcamentos.png"    VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"   />
+
+                <Label Text="Orçamentos" FontSize="10" VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+
+            <!-- MINHA CONTA -->
+            <StackLayout Grid.Row="2"  Grid.Column="4"  Spacing="-3">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BtnMinhaConta_Clicked" NumberOfTapsRequired="1" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="minhaconta.png"  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"    WidthRequest="26"   />
+
+                <Label Text="MinhaConta"   FontSize="10"      
+                       VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center"     />
+
+            </StackLayout>
+
+        </Grid>
+
+    </AbsoluteLayout>
+
+</ContentPage>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Teste03.App">
+	<Application.Resources>
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+
+            <Color x:Key="Primary"       >#2196F3</Color>
+            <Color x:Key="Blue"          >#1b418a</Color>
+            <Color x:Key="BlueBtn"       >#3f51b5</Color>
+            <Color x:Key="ClienteBtn"    >#3f51b5</Color>
+            <Color x:Key="Default"       >#f5f2f2</Color>
+            <Color x:Key="GreenBtn"      >#065315</Color>
+            <Color x:Key="LightBlue"     >#b0dce8</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="MotoristaBtn"  >#e87a33</Color>
+            <Color x:Key="PinkBtn"       >#ff4081</Color>
+            <Color x:Key="RedAlert"      >#d20f0f</Color>
+            <Color x:Key="Silver"        >#c4c4c6</Color>
+            <Color x:Key="SilverBg"      >#e1dfdf</Color>
+            <Color x:Key="SilverText"    >#333333</Color>
+            <Color x:Key="White"         >#ffffff</Color>
+            <Color x:Key="WhiteBtn"      >#e8e8e8</Color>
+
+            <!--
+            <StackLayout x:Name="MenuInicial">
+                <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource Default}" >
+
+                    <Grid RowSpacing="-1">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition  Width="85.4" />
+                            
+                            <ColumnDefinition  Width="85.4" />
+                            
+                            <ColumnDefinition  Width="85.4" />
+                            
+                            <ColumnDefinition  Width="85.4" />
+                           
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions >
+                            <RowDefinition />
+                            
+                            <RowDefinition Height="469.5" />
+                            
+                            <RowDefinition Height="50" />
+                            
+                        </Grid.RowDefinitions>
+
+                        <Label  Text="MeTransporta"     
+                                TextColor="{StaticResource LightBlue}"  BackgroundColor="{StaticResource Blue}"
+                                HorizontalOptions="FillAndExpand"       VerticalOptions="Center" 
+                                VerticalTextAlignment="Center"          HorizontalTextAlignment="Center"
+                                FontSize="22"   HeightRequest="50"
+                                Grid.Row="0"    Grid.Column="0" Grid.ColumnSpan="4"
+                            />
+
+                        <StackLayout Grid.Row="1"    Grid.Column="0" Grid.ColumnSpan="4" Margin="15">
+
+                            <Label  Text="CADASTRE-SE"  FontSize="16" FontAttributes="Bold"  TextColor="{StaticResource Blue}" 
+                                    HorizontalTextAlignment="Center"  VerticalTextAlignment="Center"  HeightRequest="60"  />
+
+                            <Label Text="Perfil Cliente" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+
+                        </StackLayout>
+
+                        
+                        <StackLayout Grid.Row="2"  Grid.Column="0" Spacing="-3" >
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnHome_Clicked" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Image Source="home.png"   VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                       HeightRequest="26"  WidthRequest="26"  />
+
+                            <Label Text="Página Inicial"  FontSize="10" VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center" />
+
+                        </StackLayout>
+
+                        
+                        <StackLayout Grid.Row="2"  Grid.Column="1" Spacing="-3"  >
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnConhecerApp_Clicked" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Image Source="car.png"     VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="26"   WidthRequest="26"   />
+
+                            <Label Text="Conheça o Aplicativo" FontSize="10" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center"  />
+
+                        </StackLayout>
+
+                        
+                        <StackLayout Grid.Row="2"  Grid.Column="2"  Spacing="-3" >
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnCadastreSe_Clicked" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Image Source="add2.png"    VerticalOptions="CenterAndExpand"     HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="26"   WidthRequest="26"   />
+
+                            <Label Text="Cadastre-se" FontSize="10"  FontAttributes="Bold"          TextColor="{StaticResource Blue}"  
+                                    VerticalOptions="StartAndExpand"  HorizontalTextAlignment="Center"     />
+
+                        </StackLayout>
+
+                       
+                        <StackLayout Grid.Row="2"  Grid.Column="3"  Spacing="-3">
+
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnLogin_Clicked" NumberOfTapsRequired="1" />
+                            </StackLayout.GestureRecognizers>
+
+                            <Image Source="pessoa.png" VerticalOptions="CenterAndExpand"   HorizontalOptions="CenterAndExpand"
+                                    HeightRequest="26"  WidthRequest="26"   />
+
+                            <Label Text="Login" FontSize="10"  VerticalOptions="StartAndExpand" HorizontalTextAlignment="Center"  />
+
+                        </StackLayout>
+                    </Grid>
+                </AbsoluteLayout>
+            </StackLayout> -->
+            
+        </ResourceDictionary>
+    </Application.Resources>
+
+
+</Application>
